@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{16b1ca2d-c5c8-4f52-a1ec-440a5dc55a46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\m3d">
+      <UniqueIdentifier>{7e0b5994-ac21-4c59-b0fa-ef8bd75a1fb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\ai">
+      <UniqueIdentifier>{dca66376-f029-4ac8-90f8-44ffcfe7b6aa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CMiracle3d.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CStr.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CVector.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Quaternion.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="TruxxUiManager.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponGroupManager.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="dMass.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="AIParam.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionInfo.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexPhysicObj.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="DecalData.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="GameImpulse.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Geom.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryInfo.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Gun.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="GeomTransform.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Modifier.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Numeric.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="NumericInRange.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="NumericInRangeRegenerating.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Obj.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicBody.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicObj.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="RefCountedBase.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="SgNode.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Vehicle.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="VehiclePart.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
