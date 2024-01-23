@@ -87,7 +87,6 @@ void __fastcall LookAtPointHook(ai::Gun* gun, int, const CVector* lookAt, float 
 		if (gun->BarrelNode)
 		{
 			quatElevation.RotX(-beta);
-			gun->BarrelNode->SetRotation(&quatElevation);
 		}
 	}
 
