@@ -33,7 +33,15 @@ void Init()
 		injector::WriteMemory<BYTE>(0x0056BF09, 0xEB);
 	}
 
-	InitWareUse();
+	if (iniReader.ReadInteger("WARE_USE", "Enabled", 0) == 1)
+	{
+		RepairWare = iniReader.ReadString("WARE_USE", "RepairWare", "");
+		RepairUnits = iniReader.ReadInteger("WARE_USE", "RepairUnits", 0);
+
+		RefuelWare = iniReader.ReadString("WARE_USE", "RefuelWare", "");
+		RefuelUnits = iniReader.ReadInteger("WARE_USE", "RefuelUnits", 0);
+		InitWareUse();
+	}
 }
 
 BOOL APIENTRY DllMain(HMODULE, DWORD reason, LPVOID)

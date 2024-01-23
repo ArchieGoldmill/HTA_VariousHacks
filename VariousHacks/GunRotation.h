@@ -23,15 +23,7 @@ bool IsTryingToFire()
 
 bool IsPlayerGun(ai::Gun* gun)
 {
-	auto gunOwner = gun->OwnerPhysicObj;
-	auto player = ai::Player::Get();
-	if (gunOwner && player)
-	{
-		auto playerVehicle = player->GetVehicle();
-		return gunOwner == playerVehicle;
-	}
-
-	return false;
+	return gun->OwnerPhysicObj == ai::Player::Instance->GetVehicle();
 }
 
 bool IsGunTimedOut(ai::Gun* gun)

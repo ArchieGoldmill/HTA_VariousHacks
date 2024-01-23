@@ -6,10 +6,7 @@ namespace ai
 {
 	struct Player
 	{
-		static Player* Get()
-		{
-			return *(Player**)0x00A135E4;
-		}
+		inline static Player*& Instance = *(Player**)0x00A135E4;
 
 		ai::Vehicle* GetVehicle()
 		{
