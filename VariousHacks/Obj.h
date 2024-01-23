@@ -31,7 +31,7 @@ namespace ai
 		int m_LastDamageSource;
 		bool m_bIsAlreadySaved;
 		int m_hierarchyType;
-		int m_prototypeId;
+		int PrototypeId;
 		std::map<int, ai::Obj*> m_allChildren;
 		std::vector<int> m_appliedPrefixIds;
 		std::vector<int> m_appliedSuffixIds;

@@ -13,6 +13,9 @@
     <Filter Include="SDK\ai">
       <UniqueIdentifier>{dca66376-f029-4ac8-90f8-44ffcfe7b6aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mod">
+      <UniqueIdentifier>{faa02535-45b4-4b9a-9e7e-fd4c80fd5879}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMiracle3d.h">
@@ -111,5 +114,30 @@
     <ClInclude Include="VehiclePart.h">
       <Filter>SDK\ai</Filter>
     </ClInclude>
+    <ClInclude Include="DragDropItemsWnd.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="GeomRepositoryItem.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="IzvratRepository.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="GeomRepository.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="PrototypeManager.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\mod\readme.txt">
+      <Filter>Mod</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\mod\scripts\VariousHacks.ini">
+      <Filter>Mod</Filter>
+    </None>
   </ItemGroup>
 </Project>

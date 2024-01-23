@@ -106,7 +106,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>Default</LanguageStandard>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -165,12 +165,16 @@
     <ClInclude Include="CVector.h" />
     <ClInclude Include="DecalData.h" />
     <ClInclude Include="dMass.h" />
+    <ClInclude Include="DragDropItemsWnd.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameImpulse.h" />
     <ClInclude Include="Geom.h" />
     <ClInclude Include="GeometryInfo.h" />
+    <ClInclude Include="GeomRepository.h" />
+    <ClInclude Include="GeomRepositoryItem.h" />
     <ClInclude Include="GeomTransform.h" />
     <ClInclude Include="Gun.h" />
+    <ClInclude Include="IzvratRepository.h" />
     <ClInclude Include="Modifier.h" />
     <ClInclude Include="Numeric.h" />
     <ClInclude Include="NumericInRange.h" />
@@ -180,6 +184,7 @@
     <ClInclude Include="PhysicBody.h" />
     <ClInclude Include="PhysicObj.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PrototypeManager.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="RefCountedBase.h" />
     <ClInclude Include="SgNode.h" />
@@ -187,6 +192,12 @@
     <ClInclude Include="Vehicle.h" />
     <ClInclude Include="VehiclePart.h" />
     <ClInclude Include="WeaponGroupManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\mod\readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\mod\scripts\VariousHacks.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
