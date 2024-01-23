@@ -85,7 +85,10 @@ void __fastcall LookAtPointHook(ai::Gun* gun, int, const CVector* lookAt, float 
 		gun->BarrelNode->SetRotation(&quatElevation);
 	}
 
-	ai::CommonGeomMovedCallback(gun->m_pGeoms.front()->m_geomId);
+	if (gun->m_pGeoms.size())
+	{
+		ai::CommonGeomMovedCallback(gun->m_pGeoms.front()->m_geomId);
+	}
 }
 
 void InitGunRotation()

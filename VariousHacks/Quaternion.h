@@ -8,6 +8,11 @@ struct Quaternion
 	float z;
 	float w;
 
+	Quaternion()
+	{
+		this->Zero();
+	}
+
 	void Lerp(const Quaternion* q1, const Quaternion* q2, float k2)
 	{
 		FUNC(0x0070AFC0, void, __thiscall, _Lerp, Quaternion*, const Quaternion*, const Quaternion*, float);

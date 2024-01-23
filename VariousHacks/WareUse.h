@@ -73,7 +73,7 @@ int __fastcall OnMouseButton0Hook(DragDropItemsWnd* dragDropItemsWnd, int, unsig
 		if (repositoryItem.IsValid())
 		{
 			auto repositoryObj = repositoryItem.GetObj();
-			if (repositoryObj && repositoryObj->IsKindOf(0x00A0238C))
+			if (repositoryObj && repositoryObj->IsKindOf(0x00A0238C)) // Ware class
 			{
 				CStr name;
 				ai::PrototypeManager::Instance->GetPrototypeName(&name, repositoryObj->PrototypeId);
@@ -91,7 +91,6 @@ int __fastcall OnMouseButton0Hook(DragDropItemsWnd* dragDropItemsWnd, int, unsig
 
 	return dragDropItemsWnd->OnMouseButton0(state, at);
 }
-
 
 void InitWareUse()
 {
