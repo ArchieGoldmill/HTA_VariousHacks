@@ -16,6 +16,9 @@
     <Filter Include="Mod">
       <UniqueIdentifier>{faa02535-45b4-4b9a-9e7e-fd4c80fd5879}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Features">
+      <UniqueIdentifier>{d2d5a690-77d4-4e23-ac3e-fdd711242998}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMiracle3d.h">
@@ -128,6 +131,12 @@
     </ClInclude>
     <ClInclude Include="PrototypeManager.h">
       <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="WareUse.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="GunRotation.h">
+      <Filter>Features</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
