@@ -13,10 +13,10 @@ namespace m3d
 			return *(Application**)0x00A0A55C;
 		}
 
-		bool ProcessWinMessages()
+		int OneFrame()
 		{
-			FUNC(0x0059FA20, bool, __thiscall, _ProcessWinMessages, Application*);
-			return _ProcessWinMessages(this);
+			FUNC(0x005A3AD0, int, __thiscall, _OneFrame, Application*);
+			return _OneFrame(this);
 		}
 	};
 }
