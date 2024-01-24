@@ -10,6 +10,7 @@
 #include "PrototypeManager.h"
 #include "WareUse.h"
 #include "GunRotation.h"
+#include "FpsLimiter.h"
 
 void Init()
 {
@@ -41,6 +42,12 @@ void Init()
 		RefuelWare = iniReader.ReadString("WARE_USE", "RefuelWare", "");
 		RefuelUnits = iniReader.ReadInteger("WARE_USE", "RefuelUnits", 0);
 		InitWareUse();
+	}
+
+	TargetFrameRate = iniReader.ReadFloat("GENERAL", "TargetFrameRate", 0);
+	if (TargetFrameRate)
+	{
+		InitFpsLimiter();
 	}
 }
 

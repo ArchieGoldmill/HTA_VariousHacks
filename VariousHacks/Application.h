@@ -12,5 +12,11 @@ namespace m3d
 		{
 			return *(Application**)0x00A0A55C;
 		}
+
+		bool ProcessWinMessages()
+		{
+			FUNC(0x0059FA20, bool, __thiscall, _ProcessWinMessages, Application*);
+			return _ProcessWinMessages(this);
+		}
 	};
 }
