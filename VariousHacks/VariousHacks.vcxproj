@@ -166,7 +166,6 @@
     <ClInclude Include="DecalData.h" />
     <ClInclude Include="dMass.h" />
     <ClInclude Include="DragDropItemsWnd.h" />
-    <ClInclude Include="FpsLimiter.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameImpulse.h" />
     <ClInclude Include="Geom.h" />

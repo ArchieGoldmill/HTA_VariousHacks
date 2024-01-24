@@ -138,9 +138,6 @@
     <ClInclude Include="GunRotation.h">
       <Filter>Features</Filter>
     </ClInclude>
-    <ClInclude Include="FpsLimiter.h">
-      <Filter>Features</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\mod\readme.txt">
