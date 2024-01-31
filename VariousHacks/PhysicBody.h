@@ -6,6 +6,8 @@
 #include "GeomTransform.h"
 #include "CollisionInfo.h"
 #include "Game.h"
+#include "SgNode.h"
+#include "PhysicObj.h"
 
 namespace ai
 {
@@ -15,11 +17,11 @@ namespace ai
 		dMass mass;
 		std::vector<ai::GeomTransform*> m_pGeoms;
 		int m_mU;
-		int m_Node;
+		m3d::SgNode* Node;
 		int m_cfgNum;
 		std::vector<ai::CollisionInfo> m_collisionInfos;
 		bool m_bCollisionTrimeshAllowed;
-		Obj* OwnerPhysicObj;
+		PhysicObj* OwnerPhysicObj;
 		bool m_bNeedToRelinkNode;
 		int m_animAction;
 		int m_effectAction;

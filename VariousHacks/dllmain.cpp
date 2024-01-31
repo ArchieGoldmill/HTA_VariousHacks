@@ -10,6 +10,8 @@
 #include "PrototypeManager.h"
 #include "WareUse.h"
 #include "GunRotation.h"
+#include "LocationDebug.h"
+#include "SkinFixes.h"
 
 void Init()
 {
@@ -42,6 +44,16 @@ void Init()
 		RefuelUnits = iniReader.ReadInteger("WARE_USE", "RefuelUnits", 0);
 		InitWareUse();
 	}
+
+	if (iniReader.ReadInteger("GENERAL", "FixLocationDebug", 0) == 1)
+	{
+		InitLocationDebug();
+	}
+	
+	if (iniReader.ReadInteger("GENERAL", "SkinFixes", 0) == 1)
+	{
+		InitSkinFixes();
+	}	
 }
 
 BOOL APIENTRY DllMain(HMODULE, DWORD reason, LPVOID)

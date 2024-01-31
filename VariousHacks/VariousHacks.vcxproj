@@ -166,6 +166,7 @@
     <ClInclude Include="DecalData.h" />
     <ClInclude Include="dMass.h" />
     <ClInclude Include="DragDropItemsWnd.h" />
+    <ClInclude Include="DynamicScene.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameImpulse.h" />
     <ClInclude Include="Geom.h" />
@@ -176,11 +177,14 @@
     <ClInclude Include="Gun.h" />
     <ClInclude Include="GunRotation.h" />
     <ClInclude Include="IzvratRepository.h" />
+    <ClInclude Include="Location.h" />
+    <ClInclude Include="LocationDebug.h" />
     <ClInclude Include="Modifier.h" />
     <ClInclude Include="Numeric.h" />
     <ClInclude Include="NumericInRange.h" />
     <ClInclude Include="NumericInRangeRegenerating.h" />
     <ClInclude Include="Obj.h" />
+    <ClInclude Include="ObjContainer.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="PhysicBody.h" />
     <ClInclude Include="PhysicObj.h" />
@@ -189,6 +193,7 @@
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="RefCountedBase.h" />
     <ClInclude Include="SgNode.h" />
+    <ClInclude Include="SkinFixes.h" />
     <ClInclude Include="TruxxUiManager.h" />
     <ClInclude Include="Vehicle.h" />
     <ClInclude Include="VehiclePart.h" />

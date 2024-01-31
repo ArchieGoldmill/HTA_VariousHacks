@@ -138,6 +138,21 @@
     <ClInclude Include="GunRotation.h">
       <Filter>Features</Filter>
     </ClInclude>
+    <ClInclude Include="DynamicScene.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjContainer.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Location.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="LocationDebug.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="SkinFixes.h">
+      <Filter>Features</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\mod\readme.txt">

@@ -29,6 +29,7 @@ bool TryRepair(ai::Vehicle* playerVehicle, CStr& name)
 			amount = max - current;
 		}
 
+
 		Repair(amount);
 		return true;
 	}

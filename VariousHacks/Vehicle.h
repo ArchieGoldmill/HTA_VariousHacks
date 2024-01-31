@@ -6,7 +6,7 @@ namespace ai
 {
 	struct Vehicle : ComplexPhysicObj
 	{
-		BYTE _offset[0x28C];
+		BYTE _offset[0x22C];
 		IzvratRepository* Repository;
 
 		float GetHealth()
