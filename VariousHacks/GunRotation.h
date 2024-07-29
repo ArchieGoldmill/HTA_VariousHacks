@@ -8,7 +8,7 @@ int WeaponGroupsToTrigger[6];
 
 bool IsTryingToFire()
 {
-	auto impulse = (m3d::GameImpulse*)CMiracle3d::Get()->Impulse;
+	auto impulse = (m3d::GameImpulse*)CMiracle3d::Instance->Impulse;
 	for (int i = 0; i < 6; i++) // from IM_CAR_FIRE_0 to IM_CAR_FIRE_ALL
 	{
 		int impId = WeaponGroupsToTrigger[i];

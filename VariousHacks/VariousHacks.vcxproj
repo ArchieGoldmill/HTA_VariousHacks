@@ -176,6 +176,7 @@
     <ClInclude Include="GeomTransform.h" />
     <ClInclude Include="Gun.h" />
     <ClInclude Include="GunRotation.h" />
+    <ClInclude Include="IRenderer.h" />
     <ClInclude Include="IzvratRepository.h" />
     <ClInclude Include="Location.h" />
     <ClInclude Include="LocationDebug.h" />

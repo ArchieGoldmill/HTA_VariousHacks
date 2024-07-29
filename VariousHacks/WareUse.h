@@ -64,7 +64,7 @@ bool TryRefuel(ai::Vehicle* playerVehicle, CStr& name)
 
 int __fastcall OnMouseButton0Hook(DragDropItemsWnd* dragDropItemsWnd, int, unsigned int state, const PointBase<float>* at)
 {
-	auto app = (CMiracle3d*)CMiracle3d::Get();
+	auto app = CMiracle3d::Instance;
 	auto impulse = (m3d::GameImpulse*)app->Impulse;
 
 	if (!DragDropItemsWnd::DragSlot && impulse->CurKeys.IsThere(0x105)) // ctrl

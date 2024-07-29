@@ -19,6 +19,9 @@
     <Filter Include="Features">
       <UniqueIdentifier>{d2d5a690-77d4-4e23-ac3e-fdd711242998}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SDK\m3d\rend">
+      <UniqueIdentifier>{85ed0f63-2ade-43da-be12-8314ab29008d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMiracle3d.h">
@@ -152,6 +155,9 @@
     </ClInclude>
     <ClInclude Include="SkinFixes.h">
       <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderer.h">
+      <Filter>SDK\m3d\rend</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
