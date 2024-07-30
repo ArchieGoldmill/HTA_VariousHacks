@@ -183,6 +183,18 @@
     <ClInclude Include="EngineConfig.h">
       <Filter>SDK\m3d</Filter>
     </ClInclude>
+    <ClInclude Include="StaticAutoGun.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="CClient.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="WeatherManager.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="CWorld.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\mod\readme.txt">

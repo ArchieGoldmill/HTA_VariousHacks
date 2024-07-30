@@ -4,6 +4,8 @@
 #include "ActionType.h"
 #include "Messages.h"
 #include "SgAnimatedModelNode.h"
+#include "StaticAutoGun.h"
+#include "CClient.h"
 
 void __fastcall Gun_SetNodeAction(ai::Gun* gun, int, ActionType action, bool forceRestartAction)
 {
@@ -93,6 +95,35 @@ void __fastcall ActivateHeadLights(ai::Vehicle* vehicle, int, bool bActivate)
 	}
 }
 
+void __stdcall StaticAutoGun_Update(ai::StaticAutoGun* staticGun)
+{
+	auto gun = (ai::Gun*)staticGun->GetPartByName((CStr*)0x00A1ACAC);
+
+	if (gun)
+	{
+		bool enable = m3d::CClient::Instance->m_world->m_weatherManager->m_curDayTime == m3d::GTP_NIGHT_TIME;
+		ActivateHeadLightsPart(gun, enable);
+	}
+}
+
+void __declspec(naked) StaticAutoGun_Update_Hook()
+{
+	static constexpr auto hExit = 0x00743747;
+
+	__asm
+	{
+		pushad;
+		push ecx;
+		call StaticAutoGun_Update;
+		popad;
+
+		mov eax, [esp + 0x08];
+		sub esp, 0x20;
+
+		jmp hExit;
+	}
+}
+
 void InitGunLights()
 {
 	injector::MakeCALL(0x004018D6, ActivateHeadLights);
@@ -100,7 +131,7 @@ void InitGunLights()
 
 	injector::MakeNOP(0x006DE1F0, 6);
 	injector::MakeCALL(0x006DE1F0, Gun_SetNodeAction);
-	
+
 	injector::MakeNOP(0x006DE20C, 6);
 	injector::MakeCALL(0x006DE20C, Gun_SetNodeAction);
 
@@ -109,7 +140,9 @@ void InitGunLights()
 
 	injector::MakeNOP(0x006DE26B, 6);
 	injector::MakeCALL(0x006DE26B, Gun_SetNodeAction);
-	
+
 	injector::MakeNOP(0x006DE2B2, 6);
 	injector::MakeCALL(0x006DE2B2, Gun_SetNodeAction);
+
+	injector::MakeJMP(0x00743740, StaticAutoGun_Update_Hook);
 }
