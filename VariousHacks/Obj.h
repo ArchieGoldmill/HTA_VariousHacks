@@ -8,6 +8,8 @@ namespace ai
 {
 	struct Obj : m3d::Object
 	{
+		virtual void Dtor() = 0;
+
 		struct EventRecipientInfo
 		{
 			int m_eventId;

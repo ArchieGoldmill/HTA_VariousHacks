@@ -1,4 +1,5 @@
 #pragma once
+#include "Messages.h"
 
 void __fastcall SetSkinHook(ai::PhysicBody* physicBody, int, int skin)
 {
@@ -10,7 +11,7 @@ void __fastcall SetSkinHook(ai::PhysicBody* physicBody, int, int skin)
 
 	if (physicBody->Node)
 	{
-		physicBody->Node->SetProperty(8706u, &skin);
+		physicBody->Node->SetProperty(PROP_DM_SKIN, &skin);
 	}
 
 	if (physicBody->IsKindOf(0x00A02354))
@@ -18,7 +19,7 @@ void __fastcall SetSkinHook(ai::PhysicBody* physicBody, int, int skin)
 		auto gun = (ai::Gun*)physicBody;
 		if (gun->BarrelNode)
 		{
-			gun->BarrelNode->SetProperty(8706u, &skin);
+			gun->BarrelNode->SetProperty(PROP_DM_SKIN, &skin);
 		}
 	}
 }

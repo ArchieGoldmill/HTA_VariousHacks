@@ -9,7 +9,7 @@ namespace m3d
 {
 	struct IImpulse
 	{
-		int vTalbe;
+		virtual void Dtor() = 0;
 	};
 
 	struct KeysSet
@@ -35,6 +35,8 @@ namespace m3d
 
 	struct GameImpulse : IImpulse, m3d::Object
 	{
+		virtual void Dtor() = 0;
+
 		int m_refCount;
 		int m_parent;
 		bool m_isInited;

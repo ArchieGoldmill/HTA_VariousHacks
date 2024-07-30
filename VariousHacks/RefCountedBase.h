@@ -4,7 +4,8 @@ namespace m3d
 {
 	struct RefCountedBase
 	{
-		int vTable;
+		virtual void Dtor() = 0;
+
 		int refCount;
 	};
 }

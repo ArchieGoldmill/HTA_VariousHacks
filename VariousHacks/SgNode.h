@@ -1,8 +1,9 @@
 #pragma once
+#include "Object.h"
 
 namespace m3d
 {
-	struct SgNode
+	struct SgNode : Object
 	{
 		virtual void Dtor() = 0;
 		virtual void Clone() = 0;
@@ -10,6 +11,7 @@ namespace m3d
 		virtual void ReadFromXmlNodeAfterAdd() = 0;
 		virtual void WriteToXmlNode() = 0;
 		virtual void SetProperty(unsigned int propId, void* prop) = 0;
+		virtual void GetProperty(unsigned int propId, void* prop) = 0;
 
 		void SetRotation(const Quaternion* quat)
 		{

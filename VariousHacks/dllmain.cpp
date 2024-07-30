@@ -12,6 +12,7 @@
 #include "GunRotation.h"
 #include "LocationDebug.h"
 #include "SkinFixes.h"
+#include "GunLights.h"
 
 void Init()
 {
@@ -49,11 +50,16 @@ void Init()
 	{
 		InitLocationDebug();
 	}
-	
+
 	if (iniReader.ReadInteger("GENERAL", "SkinFixes", 0) == 1)
 	{
 		InitSkinFixes();
-	}	
+	}
+
+	if (iniReader.ReadInteger("GENERAL", "GunLights", 0) == 1)
+	{
+		InitGunLights();
+	}
 }
 
 BOOL APIENTRY DllMain(HMODULE, DWORD reason, LPVOID)

@@ -159,6 +159,30 @@
     <ClInclude Include="IRenderer.h">
       <Filter>SDK\m3d\rend</Filter>
     </ClInclude>
+    <ClInclude Include="GunLights.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionType.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Func.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Unmap.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SgAnimatedModelNode.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Kernel.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineConfig.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\mod\readme.txt">

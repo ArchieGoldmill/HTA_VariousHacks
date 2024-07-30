@@ -8,11 +8,14 @@
 #include "Game.h"
 #include "SgNode.h"
 #include "PhysicObj.h"
+#include "ActionType.h"
 
 namespace ai
 {
 	struct PhysicBody : Obj
 	{
+		virtual void Dtor() = 0;
+
 		CStr m_modelname;
 		dMass mass;
 		std::vector<ai::GeomTransform*> m_pGeoms;
@@ -38,6 +41,18 @@ namespace ai
 		{
 			FUNC(0x00619C20, void, __thiscall, _GetNodeRelativeRotation, ai::PhysicBody*, const Quaternion*);
 			_GetNodeRelativeRotation(this, result);
+		}
+
+		void SetEffectActions(std::vector<ActionType>* Actions)
+		{
+			FUNC(0x0061D180, void, __thiscall, _SetEffectActions, ai::PhysicBody*, std::vector<ActionType>*);
+			_SetEffectActions(this, Actions);
+		}
+
+		void SetNodeAction(ActionType action, bool forceRestartAction)
+		{
+			FUNC(0x0061C450, void, __thiscall, _SetEffectActions, ai::PhysicBody*, ActionType, bool);
+			_SetEffectActions(this, action, forceRestartAction);
 		}
 	};
 }
