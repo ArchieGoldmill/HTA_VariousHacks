@@ -22,6 +22,9 @@
     <Filter Include="SDK\m3d\rend">
       <UniqueIdentifier>{85ed0f63-2ade-43da-be12-8314ab29008d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SDK\m3d\cmn">
+      <UniqueIdentifier>{8634c758-cfb4-4dca-b2cd-bc8317545d28}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMiracle3d.h">
@@ -194,6 +197,33 @@
     </ClInclude>
     <ClInclude Include="CWorld.h">
       <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="BlastWave.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="BlastWaveDamageType.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="SimplePhysicObj.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="BlastWavePrototypeInfo.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlNode.h">
+      <Filter>SDK\m3d\cmn</Filter>
+    </ClInclude>
+    <ClInclude Include="SimplePhysicObjPrototypeInfo.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicObjPrototypeInfo.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="PrototypeInfo.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageType.h">
+      <Filter>SDK\ai</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

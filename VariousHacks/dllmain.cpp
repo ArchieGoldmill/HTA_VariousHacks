@@ -13,6 +13,7 @@
 #include "LocationDebug.h"
 #include "SkinFixes.h"
 #include "GunLights.h"
+#include "BlastWaveDamageType.h"
 
 void Init()
 {
@@ -59,6 +60,11 @@ void Init()
 	if (iniReader.ReadInteger("GENERAL", "GunLights", 0) == 1)
 	{
 		InitGunLights();
+	}
+
+	if (iniReader.ReadInteger("GENERAL", "BlastWaveDamageType", 0) == 1)
+	{
+		InitBlastWaveDamageType();
 	}
 }
 

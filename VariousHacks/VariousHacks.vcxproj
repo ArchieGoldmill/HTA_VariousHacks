@@ -158,6 +158,9 @@
     <ClInclude Include="ActionType.h" />
     <ClInclude Include="AIParam.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="BlastWave.h" />
+    <ClInclude Include="BlastWaveDamageType.h" />
+    <ClInclude Include="BlastWavePrototypeInfo.h" />
     <ClInclude Include="CClient.h" />
     <ClInclude Include="CMiracle3d.h" />
     <ClInclude Include="CollisionInfo.h" />
@@ -166,6 +169,7 @@
     <ClInclude Include="CStr.h" />
     <ClInclude Include="CVector.h" />
     <ClInclude Include="CWorld.h" />
+    <ClInclude Include="DamageType.h" />
     <ClInclude Include="DecalData.h" />
     <ClInclude Include="dMass.h" />
     <ClInclude Include="DragDropItemsWnd.h" />
@@ -197,12 +201,16 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="PhysicBody.h" />
     <ClInclude Include="PhysicObj.h" />
+    <ClInclude Include="PhysicObjPrototypeInfo.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PrototypeInfo.h" />
     <ClInclude Include="PrototypeManager.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="RefCountedBase.h" />
     <ClInclude Include="SgAnimatedModelNode.h" />
     <ClInclude Include="SgNode.h" />
+    <ClInclude Include="SimplePhysicObj.h" />
+    <ClInclude Include="SimplePhysicObjPrototypeInfo.h" />
     <ClInclude Include="SkinFixes.h" />
     <ClInclude Include="StaticAutoGun.h" />
     <ClInclude Include="TruxxUiManager.h" />
@@ -212,6 +220,7 @@
     <ClInclude Include="WareUse.h" />
     <ClInclude Include="WeaponGroupManager.h" />
     <ClInclude Include="WeatherManager.h" />
+    <ClInclude Include="XmlNode.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\mod\readme.txt" />

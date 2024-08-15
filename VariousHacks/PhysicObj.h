@@ -1,5 +1,6 @@
 #pragma once
 #include "Obj.h"
+#include "Quaternion.h"
 
 namespace ai
 {
