@@ -3,7 +3,7 @@
 #include "BlastWavePrototypeInfo.h"
 #include "XmlNode.h"
 
-void __stdcall BlastWavePrototypeInfo_LoadFromXML(ai::BlastWavePrototypeInfo* blastWavePrototypeInfo, m3d::cmn::XmlNode* xmlNode)
+void __stdcall BlastWavePrototypeInfo_LoadFromXML(ai::BlastWavePrototypeInfoExtra* blastWavePrototypeInfo, m3d::cmn::XmlNode* xmlNode)
 {
 	ai::DamageType damageType = ai::DAMAGE_BLAST;
 
@@ -37,11 +37,30 @@ void __stdcall BlastWavePrototypeInfo_LoadFromXML(ai::BlastWavePrototypeInfo* bl
 	blastWavePrototypeInfo->m_DamageType = damageType;
 }
 
-void __fastcall BlastWave_Ctor(ai::BlastWave* blastWave, int, ai::BlastWavePrototypeInfo* blastWavePrototypeInfo)
+void __stdcall BlastWave_Ctor(ai::BlastWaveExtra* blastWave, ai::BlastWavePrototypeInfoExtra* blastWavePrototypeInfo)
 {
-	blastWave->Ctor(blastWavePrototypeInfo);
-
 	blastWave->m_DamageType = blastWavePrototypeInfo->m_DamageType;
+}
+
+void __declspec(naked) BlastWave_Ctor_Hook()
+{
+	static constexpr auto hExit = 0x007DF227;
+
+	__asm
+	{
+		push ebx
+		push esi
+		push edi
+		mov edi, [esp + 0x10];
+
+		pushad;
+		push edi;
+		push ecx;
+		call BlastWave_Ctor;
+		popad;
+
+		jmp hExit;
+	}
 }
 
 void __declspec(naked) BlastWavePrototypeInfo_LoadFromXML_Hook()
@@ -65,12 +84,12 @@ void __declspec(naked) BlastWavePrototypeInfo_LoadFromXML_Hook()
 
 void __declspec(naked) CollideBlastWaveAndPhysicObj_Hook()
 {
-	static constexpr auto hExit = 0x007DFADD;
+	static constexpr auto hExit = 0x007DFAF7;
 
 	__asm
 	{
 		mov eax, [edi + 0x164];
-		mov byte ptr[esp + 0x4C], al;
+		mov[esp + 0x58], eax;
 
 		jmp hExit;
 	}
@@ -82,6 +101,6 @@ void InitBlastWaveDamageType()
 	injector::WriteMemory<int>(0x007DF79D, 0x168); // resize ai::BlastWave
 
 	injector::MakeJMP(0x007DF180, BlastWavePrototypeInfo_LoadFromXML_Hook);
-	injector::MakeCALL(0x007DF7AB, BlastWave_Ctor);
-	injector::MakeJMP(0x007DFAD8, CollideBlastWaveAndPhysicObj_Hook);
+	injector::MakeJMP(0x007DF220, BlastWave_Ctor_Hook);
+	injector::MakeJMP(0x007DFAEF, CollideBlastWaveAndPhysicObj_Hook);
 }

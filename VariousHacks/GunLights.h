@@ -101,7 +101,7 @@ void __stdcall StaticAutoGun_Update(ai::StaticAutoGun* staticGun)
 
 	if (gun)
 	{
-		bool enable = m3d::CClient::Instance->m_world->m_weatherManager->m_curDayTime == m3d::GTP_NIGHT_TIME;
+		bool enable = m3d::CClient::Instance->m_world->m_weatherManager.m_curDayTime == m3d::GTP_NIGHT_TIME;
 		ActivateHeadLightsPart(gun, enable);
 	}
 }

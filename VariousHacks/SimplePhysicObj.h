@@ -16,3 +16,5 @@ namespace ai
 		bool m_testVisibility;
 	};
 }
+
+ASSERT_SIZE(ai::SimplePhysicObj, 0x144);

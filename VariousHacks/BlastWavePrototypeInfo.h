@@ -10,6 +10,13 @@ namespace ai
 		float m_WaveForceIntensity;
 		float m_WaveDamageIntensity;
 		CStr m_EffectName;
-		DamageType m_DamageType; // Custom
+	};
+
+	struct BlastWavePrototypeInfoExtra : BlastWavePrototypeInfo
+	{
+		DamageType m_DamageType;
 	};
 }
+
+ASSERT_SIZE(ai::BlastWavePrototypeInfo, 0x94);
+ASSERT_SIZE(ai::BlastWavePrototypeInfoExtra, 0x98);

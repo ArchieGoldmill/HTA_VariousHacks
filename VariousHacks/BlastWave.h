@@ -15,12 +15,13 @@ namespace ai
 		void* m_EffectNode;
 		int m_emitterId;
 		bool m_bCollided;
-		DamageType m_DamageType; // Custom
+	};
 
-		void Ctor(ai::BlastWavePrototypeInfo* prototypeInfo)
-		{
-			FUNC(0x007DF220, void, __thiscall, _Ctor, BlastWave*, ai::BlastWavePrototypeInfo*);
-			_Ctor(this, prototypeInfo);
-		}
+	struct BlastWaveExtra : BlastWave
+	{
+		DamageType m_DamageType;
 	};
 }
+
+ASSERT_SIZE(ai::BlastWave, 0x164);
+ASSERT_SIZE(ai::BlastWaveExtra, 0x168);

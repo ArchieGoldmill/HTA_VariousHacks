@@ -13,7 +13,7 @@ namespace m3d
 
 	struct WeatherManager
 	{
-		BYTE _offset[0x38];
+		BYTE _offset[0x3C];
 		GlobalTimeParams m_curDayTime;
 	};
 }
