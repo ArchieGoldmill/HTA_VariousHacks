@@ -97,8 +97,8 @@ void __declspec(naked) CollideBlastWaveAndPhysicObj_Hook()
 
 void InitBlastWaveDamageType()
 {
-	injector::WriteMemory<int>(0x005F81AC, 0x98); // resize ai::BlastWavePrototypeInfo
-	injector::WriteMemory<int>(0x007DF79D, 0x168); // resize ai::BlastWave
+	injector::WriteMemory<int>(0x005F81AC, sizeof(ai::BlastWavePrototypeInfoExtra)); // resize ai::BlastWavePrototypeInfo
+	injector::WriteMemory<int>(0x007DF79D, sizeof(ai::BlastWaveExtra)); // resize ai::BlastWave
 
 	injector::MakeJMP(0x007DF180, BlastWavePrototypeInfo_LoadFromXML_Hook);
 	injector::MakeJMP(0x007DF220, BlastWave_Ctor_Hook);
