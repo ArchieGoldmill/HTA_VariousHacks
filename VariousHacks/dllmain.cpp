@@ -57,14 +57,19 @@ void Init()
 		InitSkinFixes();
 	}
 
-	if (iniReader.ReadInteger("GENERAL", "GunLights", 0) == 1)
+	if (iniReader.ReadInteger("DEVELOPER", "GunLights", 0) == 1)
 	{
 		InitGunLights();
 	}
 
-	if (iniReader.ReadInteger("GENERAL", "BlastWaveDamageType", 0) == 1)
+	if (iniReader.ReadInteger("DEVELOPER", "BlastWaveDamageType", 0) == 1)
 	{
 		InitBlastWaveDamageType();
+	}
+
+	if (iniReader.ReadInteger("DEVELOPER", "PlasmaBunchBarrelHack", 0) == 1)
+	{
+		injector::MakeNOP(0x00746198, 6);
 	}
 }
 
