@@ -21,7 +21,7 @@ namespace ai
 		float m_averageWheelAVel;
 		bool m_bAutoBrake;
 		bool m_bHandBrake;
-		BYTE _offset2[0x103];
+		BYTE _offset2[0x102];
 		IzvratRepository* Repository;
 		void* m_groundRepository;
 		std::vector<ActionType> m_effectActions;
