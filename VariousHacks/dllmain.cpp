@@ -14,6 +14,7 @@
 #include "SkinFixes.h"
 #include "GunLights.h"
 #include "BlastWaveDamageType.h"
+#include "CardanFix.h"
 
 void Init()
 {
@@ -55,6 +56,11 @@ void Init()
 	if (iniReader.ReadInteger("GENERAL", "SkinFixes", 0) == 1)
 	{
 		InitSkinFixes();
+	}
+
+	if (iniReader.ReadInteger("GENERAL", "CardanFix", 0) == 1)
+	{
+		InitCardanFix();
 	}
 
 	if (iniReader.ReadInteger("DEVELOPER", "GunLights", 0) == 1)
