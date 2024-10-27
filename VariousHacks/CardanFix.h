@@ -12,12 +12,6 @@ int RoughSign(float value)
     return -1;
 }
 
-m3d::AnimInfo* GetNodeAnimInfo(m3d::SgNode* node)
-{
-    m3d::AnimInfo* (*getNodeAnimInfo)(m3d::SgNode*) = reinterpret_cast<m3d::AnimInfo* (*)(m3d::SgNode*)>(0x007D2E20);
-    return getNodeAnimInfo(node);
-}
-
 #define FLOAT_1_0 1.0f
 
 void __fastcall _KeepThrottle(ai::Vehicle* vehicle, int, bool applyActions)
@@ -123,7 +117,8 @@ void __fastcall _KeepThrottle(ai::Vehicle* vehicle, int, bool applyActions)
                     ai::Chassis* chassis = vehicle->GetChassis();
                     if (chassis)
                     {
-                        m3d::AnimInfo* info = GetNodeAnimInfo(chassis->Node);
+                        m3d::AnimInfo* info;
+                        chassis->Node->GetProperty(1, &info);
                         if (info)
                         {
                             bool has_anim = !info->m_Empty;
@@ -168,7 +163,8 @@ void __fastcall _KeepThrottle(ai::Vehicle* vehicle, int, bool applyActions)
                         ai::Chassis* chassis = vehicle->GetChassis();
                         if (chassis)
                         {
-                            m3d::AnimInfo* info = GetNodeAnimInfo(chassis->Node);
+                            m3d::AnimInfo* info;
+                            chassis->Node->GetProperty(1, &info);
                             if (info)
                             {
                                 bool has_anim = !info->m_Empty;
@@ -205,7 +201,8 @@ void __fastcall _KeepThrottle(ai::Vehicle* vehicle, int, bool applyActions)
                     ai::Chassis* chassis = vehicle->GetChassis();
                     if (chassis)
                     {
-                        m3d::AnimInfo* info = GetNodeAnimInfo(chassis->Node);
+                        m3d::AnimInfo* info;
+                        chassis->Node->GetProperty(1, &info);
                         if (info)
                         {
                             bool has_anim = !info->m_Empty;

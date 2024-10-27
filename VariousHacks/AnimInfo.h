@@ -10,4 +10,6 @@ namespace m3d
 		BYTE m_offset2[3 + 4 + 4];
 		void* m_curAnimation;
 	};
+
+	ASSERT_SIZE(AnimInfo, 0x28);
 }

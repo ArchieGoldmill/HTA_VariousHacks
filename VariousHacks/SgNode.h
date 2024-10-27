@@ -11,7 +11,12 @@ namespace m3d
 		virtual void ReadFromXmlNodeAfterAdd() = 0;
 		virtual void WriteToXmlNode() = 0;
 		virtual void SetProperty(unsigned int propId, void* prop) = 0;
-		virtual void GetProperty(unsigned int propId, void* prop) = 0;
+
+		void GetProperty(unsigned int propId, void* prop) override
+		{
+			FUNC(0x0063EB10, void, __thiscall, _GetProperty, m3d::SgNode*, unsigned int propId, void* prop);
+			_GetProperty(this, propId, prop);
+		}
 
 		void SetRotation(const Quaternion* quat)
 		{

@@ -29,4 +29,6 @@ namespace ai
 		float m_durabilityRegeneration;
 		CStr m_blastWavePrototypeName;
 	};
+
+	ASSERT_SIZE(ai::VehiclePrototypeInfo, 0x12C);
 }
