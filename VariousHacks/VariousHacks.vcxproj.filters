@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
@@ -224,6 +224,33 @@
     </ClInclude>
     <ClInclude Include="DamageType.h">
       <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Basket.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Cabin.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="VehiclePrototypeInfo.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexPhysicObjPrototypeInfo.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexPhysicObjPartDescription.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Chassis.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="CardanFix.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimInfo.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjContUpgrade.h">
+      <Filter>Features</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

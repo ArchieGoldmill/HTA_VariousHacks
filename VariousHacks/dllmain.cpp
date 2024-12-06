@@ -15,6 +15,7 @@
 #include "GunLights.h"
 #include "BlastWaveDamageType.h"
 #include "CardanFix.h"
+#include "ObjContUpgrade.h"
 
 void Init()
 {
@@ -61,6 +62,11 @@ void Init()
 	if (iniReader.ReadInteger("GENERAL", "CardanFix", 0) == 1)
 	{
 		InitCardanFix();
+	}
+
+	if (iniReader.ReadInteger("GENERAL", "ObjContUpgrade", 0) == 1)
+	{
+		InitObjContUpgrade();
 	}
 
 	if (iniReader.ReadInteger("DEVELOPER", "GunLights", 0) == 1)

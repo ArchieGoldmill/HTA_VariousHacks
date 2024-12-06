@@ -497,6 +497,16 @@ inline memory_pointer_raw GetBranchDestination(memory_pointer_tr at, bool vp = t
 }
 
 /*
+ *  MakePUSH
+ *      Creates a PUSH instruction at address @at that pushes the immediate value @value onto the stack
+ */
+inline void MakePUSH(memory_pointer_tr at, uint32_t value, bool vp = true)
+{
+    WriteMemory<uint8_t>(at, 0x68, vp); // Opcode for PUSH immediate
+    WriteMemory<uint32_t>(at + 1, value, vp); // Write the immediate value
+}
+
+/*
  *  MakeJMP
  *      Creates a JMP instruction at address @at that jumps into address @dest
  *      If there was already a branch instruction there, returns the previosly destination of the branch
