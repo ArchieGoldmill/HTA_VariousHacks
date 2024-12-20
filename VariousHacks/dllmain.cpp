@@ -16,6 +16,7 @@
 #include "BlastWaveDamageType.h"
 #include "CardanFix.h"
 #include "ObjContUpgrade.h"
+#include "PostEffectReloadFix.h"
 
 void Init()
 {
@@ -82,6 +83,11 @@ void Init()
 	if (iniReader.ReadInteger("DEVELOPER", "PlasmaBunchBarrelHack", 0) == 1)
 	{
 		injector::MakeNOP(0x00746198, 6);
+	}
+
+	if (iniReader.ReadInteger("DEVELOPER", "FixPostEffectReload", 0) == 1)
+	{
+		InitPostEffectReload();
 	}
 }
 
