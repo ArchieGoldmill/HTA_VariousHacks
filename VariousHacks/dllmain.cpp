@@ -89,6 +89,11 @@ void Init()
 	{
 		InitPostEffectReload();
 	}
+
+	if (iniReader.ReadInteger("DEVELOPER", "Ultrawide", 0) == 1)
+	{
+		injector::WriteMemory(0x7A6128, 0x3F800000);
+	}
 }
 
 BOOL APIENTRY DllMain(HMODULE, DWORD reason, LPVOID)

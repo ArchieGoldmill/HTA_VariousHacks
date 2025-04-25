@@ -255,6 +255,9 @@
     <ClInclude Include="PostEffectReloadFix.h">
       <Filter>Features</Filter>
     </ClInclude>
+    <ClInclude Include="ultrawide.h">
+      <Filter>Features</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\mod\readme.txt">

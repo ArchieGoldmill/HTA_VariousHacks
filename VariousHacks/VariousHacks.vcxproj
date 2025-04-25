@@ -150,6 +150,7 @@
     <ClInclude Include="PhysicObj.h" />
     <ClInclude Include="PhysicObjPrototypeInfo.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PostEffectReloadFix.h" />
     <ClInclude Include="PrototypeInfo.h" />
     <ClInclude Include="PrototypeManager.h" />
     <ClInclude Include="Quaternion.h" />
