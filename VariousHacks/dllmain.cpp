@@ -37,13 +37,50 @@ void Init()
 		injector::WriteMemory<BYTE>(0x0056BF09, 0xEB);
 	}
 
-	if (iniReader.ReadInteger("WARE_USE", "Enabled", 0) == 1)
+	if (iniReader.ReadInteger("GENERAL", "WareUse", 0) == 1)
 	{
-		RepairWare = iniReader.ReadString("WARE_USE", "RepairWare", "");
-		RepairUnits = iniReader.ReadInteger("WARE_USE", "RepairUnits", 0);
+		char buff[128];
 
-		RefuelWare = iniReader.ReadString("WARE_USE", "RefuelWare", "");
-		RefuelUnits = iniReader.ReadInteger("WARE_USE", "RefuelUnits", 0);
+		int i = 1;
+		while (true)
+		{
+			sprintf(buff, "REPAIR_%d", i);
+			if (iniReader.HasSection(buff))
+			{
+				auto wu = new WareUnits();
+
+				wu->Ware = iniReader.ReadString(buff, "Ware", "");
+				wu->Units = iniReader.ReadInteger(buff, "Units", 0);
+
+				RepairWares.push_back(wu);
+				i++;
+			}
+			else
+			{
+				break;
+			}
+		}
+
+		i = 1;
+		while (true)
+		{
+			sprintf(buff, "REFUEL_%d", i);
+			if (iniReader.HasSection(buff))
+			{
+				auto wu = new WareUnits();
+
+				wu->Ware = iniReader.ReadString(buff, "Ware", "");
+				wu->Units = iniReader.ReadInteger(buff, "Units", 0);
+
+				RefuelWares.push_back(wu);
+				i++;
+			}
+			else
+			{
+				break;
+			}
+		}
+
 		InitWareUse();
 	}
 

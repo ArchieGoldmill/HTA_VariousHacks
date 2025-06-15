@@ -6,32 +6,39 @@
 #include "PrototypeManager.h"
 #include "Player.h"
 
-float RepairUnits;
-float RefuelUnits;
-std::string RepairWare;
-std::string RefuelWare;
+struct WareUnits
+{
+	float Units;
+	std::string Ware;
+};
+
+std::vector< WareUnits*> RepairWares;
+std::vector< WareUnits*> RefuelWares;
 
 bool TryRepair(ai::Vehicle* playerVehicle, CStr& name)
 {
-	if (name.Equal(RepairWare.c_str()))
+	for (auto wu : RepairWares)
 	{
-		float current = playerVehicle->GetHealth();
-		float max = playerVehicle->GetMaxHealth();
-
-		if (current >= max)
+		if (name.Equal(wu->Ware.c_str()))
 		{
-			return false;
+			float current = playerVehicle->GetHealth();
+			float max = playerVehicle->GetMaxHealth();
+
+			if (current >= max)
+			{
+				return false;
+			}
+
+			float amount = wu->Units;
+			if (current + amount > max)
+			{
+				amount = max - current;
+			}
+
+
+			Repair(amount);
+			return true;
 		}
-
-		float amount = RepairUnits;
-		if (current + amount > max)
-		{
-			amount = max - current;
-		}
-
-
-		Repair(amount);
-		return true;
 	}
 
 	return false;
@@ -39,24 +46,27 @@ bool TryRepair(ai::Vehicle* playerVehicle, CStr& name)
 
 bool TryRefuel(ai::Vehicle* playerVehicle, CStr& name)
 {
-	if (name.Equal(RefuelWare.c_str()))
+	for (auto wu : RefuelWares)
 	{
-		float current = playerVehicle->GetFuel();
-		float max = playerVehicle->GetMaxFuel();
-
-		if (current >= max)
+		if (name.Equal(wu->Ware.c_str()))
 		{
-			return false;
-		}
+			float current = playerVehicle->GetFuel();
+			float max = playerVehicle->GetMaxFuel();
 
-		float amount = RefuelUnits;
-		if (current + amount > max)
-		{
-			amount = max - current;
-		}
+			if (current >= max)
+			{
+				return false;
+			}
 
-		Refuel(nullptr, amount);
-		return true;
+			float amount = wu->Units;
+			if (current + amount > max)
+			{
+				amount = max - current;
+			}
+
+			Refuel(nullptr, amount);
+			return true;
+		}
 	}
 
 	return false;
