@@ -114,7 +114,7 @@ void Init()
 	{
 		for (int i = 0; i < 10; i++)
 		{
-			sprintf(buff, "Script_%d", i);
+			sprintf(buff, "Script_%d", i + 1);
 			LuaScripts[i] = iniReader.ReadString("LUA_BINDS", buff, "");
 		}
 

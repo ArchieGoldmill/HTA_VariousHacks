@@ -5,6 +5,7 @@
 4. Исправляет отображение текста в режиме ai_location_debug.
 5. Добавляет световые эффекты для оружия (если поддерживается).
 6. Добавляет возможно указать DamageType для BlastWave.
+7. Добавляет возможность использовать IM_DEBUG импульсы для вызова LUA функций.
 
 Установка:
 1. Переместить dinput8.dll и scripts в папку с игрой (SteamLibrary\steamapps\common\Hard Truck Apocalypse).
