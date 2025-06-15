@@ -53,5 +53,11 @@ namespace m3d
 			FUNC(0x00597250, bool, __thiscall, _GetImpulseState, GameImpulse*, int);
 			return _GetImpulseState(this, impId);
 		}
+		
+		bool GetImpulseStateAndReset(int impId)
+		{
+			FUNC(0x005946E0, bool, __thiscall, _GetImpulseStateAndReset, GameImpulse*, int);
+			return _GetImpulseStateAndReset(this, impId);
+		}
 	};
 }

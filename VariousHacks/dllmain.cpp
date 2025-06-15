@@ -14,20 +14,23 @@
 #include "SkinFixes.h"
 #include "GunLights.h"
 #include "BlastWaveDamageType.h"
+#include "LuaBinds.h"
+#include "Impulse.h"
 
 void Init()
 {
 	CIniReader iniReader("VariousHacks.ini");
+	char buff[128];
 
 	GunsRotationTimeOut = iniReader.ReadFloat("GUNS_ROTATION", "TimeOut", 0);
 	if (iniReader.ReadInteger("GUNS_ROTATION", "Enabled", 0) == 1 && GunsRotationTimeOut > 0)
 	{
-		WeaponGroupsToTrigger[0] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_1", 0) == 1 ? 0x21 : 0;
-		WeaponGroupsToTrigger[1] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_2", 0) == 1 ? 0x22 : 0;
-		WeaponGroupsToTrigger[2] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_3", 0) == 1 ? 0x23 : 0;
-		WeaponGroupsToTrigger[3] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_4", 0) == 1 ? 0x24 : 0;
-		WeaponGroupsToTrigger[4] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_5", 0) == 1 ? 0x25 : 0;
-		WeaponGroupsToTrigger[5] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_All", 0) == 1 ? 0x26 : 0;
+		WeaponGroupsToTrigger[0] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_1", 0) == 1 ? IM_CAR_FIRE_0 : 0;
+		WeaponGroupsToTrigger[1] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_2", 0) == 1 ? IM_CAR_FIRE_1 : 0;
+		WeaponGroupsToTrigger[2] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_3", 0) == 1 ? IM_CAR_FIRE_2 : 0;
+		WeaponGroupsToTrigger[3] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_4", 0) == 1 ? IM_CAR_FIRE_3 : 0;
+		WeaponGroupsToTrigger[4] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_5", 0) == 1 ? IM_CAR_FIRE_4 : 0;
+		WeaponGroupsToTrigger[5] = iniReader.ReadInteger("GUNS_ROTATION", "WeaponGroup_All", 0) == 1 ? IM_CAR_FIRE_ALL : 0;
 
 		InitGunRotation();
 	}
@@ -39,8 +42,6 @@ void Init()
 
 	if (iniReader.ReadInteger("GENERAL", "WareUse", 0) == 1)
 	{
-		char buff[128];
-
 		int i = 1;
 		while (true)
 		{
@@ -108,6 +109,21 @@ void Init()
 	{
 		injector::MakeNOP(0x00746198, 6);
 	}
+
+	if (iniReader.ReadInteger("LUA_BINDS", "Enabled", 0) == 1)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			sprintf(buff, "Script_%d", i);
+			LuaScripts[i] = iniReader.ReadString("LUA_BINDS", buff, "");
+		}
+
+		InitLuaScripts();
+	}
+
+#ifdef  _DEBUG
+	injector::MakeNOP(0x005A8AD5, 2);
+#endif
 }
 
 BOOL APIENTRY DllMain(HMODULE, DWORD reason, LPVOID)

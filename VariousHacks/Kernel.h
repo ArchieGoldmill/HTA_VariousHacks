@@ -1,6 +1,7 @@
 #pragma once
 #include <Windows.h>
 #include "EngineConfig.h"
+#include "ScriptServer.h"
 
 namespace m3d
 {
@@ -10,5 +11,6 @@ namespace m3d
 
 		BYTE _offset[0x10];
 		EngineConfig* m_engineConfig;
+		ScriptServer* m_scriptServer;
 	};
 }

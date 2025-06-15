@@ -125,11 +125,13 @@
     <ClInclude Include="Gun.h" />
     <ClInclude Include="GunLights.h" />
     <ClInclude Include="GunRotation.h" />
+    <ClInclude Include="Impulse.h" />
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="IzvratRepository.h" />
     <ClInclude Include="Kernel.h" />
     <ClInclude Include="Location.h" />
     <ClInclude Include="LocationDebug.h" />
+    <ClInclude Include="LuaBinds.h" />
     <ClInclude Include="Messages.h" />
     <ClInclude Include="Modifier.h" />
     <ClInclude Include="Numeric.h" />
@@ -146,6 +148,7 @@
     <ClInclude Include="PrototypeManager.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="RefCountedBase.h" />
+    <ClInclude Include="ScriptServer.h" />
     <ClInclude Include="SgAnimatedModelNode.h" />
     <ClInclude Include="SgNode.h" />
     <ClInclude Include="SimplePhysicObj.h" />

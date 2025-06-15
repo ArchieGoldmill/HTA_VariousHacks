@@ -225,6 +225,15 @@
     <ClInclude Include="DamageType.h">
       <Filter>SDK\ai</Filter>
     </ClInclude>
+    <ClInclude Include="LuaBinds.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Impulse.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptServer.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\mod\readme.txt">
