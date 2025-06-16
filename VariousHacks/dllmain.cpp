@@ -22,6 +22,11 @@
 
 void Init()
 {
+	// Enable console
+#ifdef  _DEBUG
+	injector::MakeNOP(0x005A8AD5, 2);
+#endif
+
 	CIniReader iniReader("VariousHacks.ini");
 	char buff[128];
 
@@ -133,10 +138,6 @@ void Init()
 
 		InitLuaScripts();
 	}
-
-#ifdef  _DEBUG
-	injector::MakeNOP(0x005A8AD5, 2);
-#endif
 
 	if (iniReader.ReadInteger("DEVELOPER", "FixPostEffectReload", 0) == 1)
 	{

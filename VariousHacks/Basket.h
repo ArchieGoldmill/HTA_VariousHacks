@@ -5,5 +5,6 @@ namespace ai
 {
 	struct Basket : VehiclePart // sizeof=0x2C8
 	{
+
 	};
 }

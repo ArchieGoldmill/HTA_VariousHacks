@@ -2,25 +2,25 @@
 
 void __stdcall UpdateWeather()
 {
-    m3d::CClient::Instance->m_world->m_weatherManager.UpdateDayTime();
+	m3d::CClient::Instance->m_world->m_weatherManager.UpdateDayTime();
 }
 
 void __declspec(naked) UpdateWeatherHook()
 {
-    __asm {
+	__asm {
 
-        pushad;
-        call UpdateWeather;
-        popad;
+		pushad;
+		call UpdateWeather;
+		popad;
 
-        add esp, 2C0h;
+		add esp, 0x2C0;
 
-        retn 8;
-    }
+		retn 8;
+	}
 }
 
 void InitPostEffectReload()
 {
-    injector::MakeNOP(0x0041F433, 9);
-    injector::MakeJMP(0x0041F433, UpdateWeatherHook);
+	injector::MakeNOP(0x0041F433, 9);
+	injector::MakeJMP(0x0041F433, UpdateWeatherHook);
 }

@@ -1,5 +1,4 @@
 #pragma once
-#include <minwindef.h>
 
 namespace m3d
 {
@@ -10,6 +9,6 @@ namespace m3d
 		BYTE m_offset2[3 + 4 + 4];
 		void* m_curAnimation;
 	};
-
-	ASSERT_SIZE(AnimInfo, 0x28);
 }
+
+ASSERT_SIZE(m3d::AnimInfo, 0x28);

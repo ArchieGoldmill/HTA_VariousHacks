@@ -9,6 +9,6 @@ namespace ai
 		int m_partResourceId;
 		std::vector<CStr, std::allocator<CStr>> m_lpNames;
 	};
-
-	ASSERT_SIZE(ai::ComplexPhysicObjPartDescription, 0x48);
 }
+
+ASSERT_SIZE(ai::ComplexPhysicObjPartDescription, 0x48);

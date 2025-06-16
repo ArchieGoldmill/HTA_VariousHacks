@@ -14,6 +14,6 @@ namespace ai
 		CVector m_massTranslation;
 		BYTE _offset[0x24];
 	};
-
-	ASSERT_SIZE(ai::ComplexPhysicObjPrototypeInfo, 0x90);
 }
+
+ASSERT_SIZE(ai::ComplexPhysicObjPrototypeInfo, 0x90);
