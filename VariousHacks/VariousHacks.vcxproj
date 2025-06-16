@@ -96,14 +96,21 @@
   <ItemGroup>
     <ClInclude Include="ActionType.h" />
     <ClInclude Include="AIParam.h" />
+    <ClInclude Include="AnimInfo.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Basket.h" />
     <ClInclude Include="BlastWave.h" />
     <ClInclude Include="BlastWaveDamageType.h" />
     <ClInclude Include="BlastWavePrototypeInfo.h" />
+    <ClInclude Include="Cabin.h" />
+    <ClInclude Include="CardanFix.h" />
     <ClInclude Include="CClient.h" />
+    <ClInclude Include="Chassis.h" />
     <ClInclude Include="CMiracle3d.h" />
     <ClInclude Include="CollisionInfo.h" />
     <ClInclude Include="ComplexPhysicObj.h" />
+    <ClInclude Include="ComplexPhysicObjPartDescription.h" />
+    <ClInclude Include="ComplexPhysicObjPrototypeInfo.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="CStr.h" />
     <ClInclude Include="CVector.h" />
@@ -139,11 +146,13 @@
     <ClInclude Include="NumericInRangeRegenerating.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="ObjContainer.h" />
+    <ClInclude Include="ObjContUpgrade.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="PhysicBody.h" />
     <ClInclude Include="PhysicObj.h" />
     <ClInclude Include="PhysicObjPrototypeInfo.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PostEffectReloadFix.h" />
     <ClInclude Include="PrototypeInfo.h" />
     <ClInclude Include="PrototypeManager.h" />
     <ClInclude Include="Quaternion.h" />
@@ -159,6 +168,7 @@
     <ClInclude Include="Unmap.h" />
     <ClInclude Include="Vehicle.h" />
     <ClInclude Include="VehiclePart.h" />
+    <ClInclude Include="VehiclePrototypeInfo.h" />
     <ClInclude Include="WareUse.h" />
     <ClInclude Include="WeaponGroupManager.h" />
     <ClInclude Include="WeatherManager.h" />

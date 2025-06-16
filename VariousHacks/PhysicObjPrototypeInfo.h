@@ -8,4 +8,6 @@ namespace ai
 		float m_intersectionRadius;
 		float m_lookRadius;
 	};
+
+	ASSERT_SIZE(ai::PhysicObjPrototypeInfo, 0x48);
 }

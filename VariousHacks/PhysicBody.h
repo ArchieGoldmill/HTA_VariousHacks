@@ -54,5 +54,17 @@ namespace ai
 			FUNC(0x0061C450, void, __thiscall, _SetEffectActions, ai::PhysicBody*, ActionType, bool);
 			_SetEffectActions(this, action, forceRestartAction);
 		}
+
+		void SetNodeAnimAction(ActionType action, bool forceRestartAction)
+		{
+			FUNC(0x0061C5B0, void, __thiscall, _SetNodeAnimAction, ai::PhysicBody*, ActionType, bool);
+			_SetNodeAnimAction(this, action, forceRestartAction);
+		}
+
+		void SetAnimationStopped(bool bStopped)
+		{
+			FUNC(0x0061CD30, void, __thiscall, _SetAnimationStopped, ai::PhysicBody*, bool);
+			_SetAnimationStopped(this, bStopped);
+		}
 	};
 }

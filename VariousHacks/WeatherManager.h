@@ -15,5 +15,11 @@ namespace m3d
 	{
 		BYTE _offset[0x3C];
 		GlobalTimeParams m_curDayTime;
+
+		void UpdateDayTime()
+		{
+			FUNC(0x00660060, void, __thiscall, _UpdateDayTime, WeatherManager*);
+			_UpdateDayTime(this);
+		}
 	};
 }
