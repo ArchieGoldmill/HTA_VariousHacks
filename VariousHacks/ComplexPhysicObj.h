@@ -13,4 +13,5 @@ namespace ai
 			return _GetPartByName(this, partName);
 		}
 	};
+	ASSERT_SIZE(ai::ComplexPhysicObj, 0x12C);
 }

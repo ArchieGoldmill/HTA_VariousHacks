@@ -23,5 +23,11 @@ namespace ai
 		bool m_bBodyEnabledLastFrame;
 		int SkinNumber;
 		int m_timeFromLastCollisionEffect;
+
+		CVector* GetDirection(CVector* result)
+		{
+			FUNC(0x005FA360, CVector*, __thiscall, _GetDirection, PhysicObj*, CVector*);
+			return _GetDirection(this, result);
+		}
 	};
 }

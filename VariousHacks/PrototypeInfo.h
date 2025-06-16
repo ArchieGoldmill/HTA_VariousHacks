@@ -19,4 +19,6 @@ namespace ai
 		CStr m_parentPrototypeName;
 		int m_protoClassObject;
 	};
+
+	ASSERT_SIZE(ai::PrototypeInfo, 0x40);
 }

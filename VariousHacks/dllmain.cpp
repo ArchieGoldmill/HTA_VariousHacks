@@ -16,6 +16,9 @@
 #include "BlastWaveDamageType.h"
 #include "LuaBinds.h"
 #include "Impulse.h"
+#include "CardanFix.h"
+#include "ObjContUpgrade.h"
+#include "PostEffectReloadFix.h"
 
 void Init()
 {
@@ -95,6 +98,16 @@ void Init()
 		InitSkinFixes();
 	}
 
+	if (iniReader.ReadInteger("GENERAL", "CardanFix", 0) == 1)
+	{
+		InitCardanFix();
+	}
+
+	if (iniReader.ReadInteger("GENERAL", "ObjContUpgrade", 0) == 1)
+	{
+		InitObjContUpgrade();
+	}
+
 	if (iniReader.ReadInteger("DEVELOPER", "GunLights", 0) == 1)
 	{
 		InitGunLights();
@@ -124,6 +137,16 @@ void Init()
 #ifdef  _DEBUG
 	injector::MakeNOP(0x005A8AD5, 2);
 #endif
+
+	if (iniReader.ReadInteger("DEVELOPER", "FixPostEffectReload", 0) == 1)
+	{
+		InitPostEffectReload();
+	}
+
+	if (iniReader.ReadInteger("DEVELOPER", "Ultrawide", 0) == 1)
+	{
+		injector::WriteMemory(0x7A6128, 0x3F800000);
+	}
 }
 
 BOOL APIENTRY DllMain(HMODULE, DWORD reason, LPVOID)

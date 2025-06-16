@@ -234,6 +234,39 @@
     <ClInclude Include="ScriptServer.h">
       <Filter>SDK\m3d</Filter>
     </ClInclude>
+    <ClInclude Include="Basket.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Cabin.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="VehiclePrototypeInfo.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexPhysicObjPrototypeInfo.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexPhysicObjPartDescription.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Chassis.h">
+      <Filter>SDK\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="CardanFix.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimInfo.h">
+      <Filter>SDK\m3d</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjContUpgrade.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="PostEffectReloadFix.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="ultrawide.h">
+      <Filter>Features</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\mod\readme.txt">
