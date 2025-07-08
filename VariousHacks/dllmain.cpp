@@ -19,6 +19,7 @@
 #include "CardanFix.h"
 #include "ObjContUpgrade.h"
 #include "PostEffectReloadFix.h"
+#include "AutoBrakeFix.h"
 
 void Init()
 {
@@ -147,6 +148,11 @@ void Init()
 	if (iniReader.ReadInteger("DEVELOPER", "Ultrawide", 0) == 1)
 	{
 		injector::WriteMemory(0x7A6128, 0x3F800000);
+	}
+	
+	if (iniReader.ReadInteger("DEVELOPER", "AutoBrakeFix", 0) == 1)
+	{
+		InitAutoBrakeFix();
 	}
 }
 

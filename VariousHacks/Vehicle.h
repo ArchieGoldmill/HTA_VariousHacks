@@ -6,6 +6,7 @@
 #include "Basket.h"
 #include "Cabin.h"
 #include "Chassis.h"
+#include "Path.h"
 
 namespace ai
 {
@@ -21,7 +22,10 @@ namespace ai
 		float m_averageWheelAVel;
 		bool m_bAutoBrake;
 		bool m_bHandBrake;
-		BYTE _offset2[0x102];
+		BYTE _offset2[0xB6];
+		ai::Path* m_pPath;
+		int m_pathNum;
+		BYTE _offset3[0x44];
 		IzvratRepository* Repository;
 		void* m_groundRepository;
 		std::vector<ActionType> m_effectActions;
@@ -54,6 +58,12 @@ namespace ai
 		{
 			FUNC(0x005DA130, void, __thiscall, _ActivateHeadLights, Vehicle*, bool);
 			_ActivateHeadLights(this, bActivate);
+		}
+
+		void SetThrottle(float throttle, bool autoBrake)
+		{
+			FUNC(0x005D1210, void, __thiscall, _SetThrottle, Vehicle*, float, bool);
+			_SetThrottle(this, throttle, autoBrake);
 		}
 
 		CVector* GetLinearVelocity(CVector* result)
