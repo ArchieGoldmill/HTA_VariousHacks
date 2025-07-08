@@ -264,7 +264,10 @@
     <ClInclude Include="PostEffectReloadFix.h">
       <Filter>Features</Filter>
     </ClInclude>
-    <ClInclude Include="ultrawide.h">
+    <ClInclude Include="AutoBrakeFix.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
       <Filter>Features</Filter>
     </ClInclude>
   </ItemGroup>
